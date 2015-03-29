@@ -1,7 +1,8 @@
-﻿
+﻿@model WebUi.Models.Contact
 @{
     ViewBag.Title = "Fire And Forget";
     Layout = "~/Views/Shared/_Main.cshtml";
+
 }
 
 <div class="row">
@@ -9,7 +10,26 @@
         <div class="page-header">
             <h1><i class="fa fa-wrench pad-r"></i>Ejecutar tareas asincrónicamente</h1>
         </div>
-        <h2>Content goes here</h2>
+        <form action="@Url.Action("AddContact")" method="POST" role="form">
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <label for="Name">Nombre</label>
+                    <input type="text" required class="form-control" id="Name" name="Name" placeholder="nombre del contacto" value="@Model.Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <label for="LastName">Apellido</label>
+                    <input type="text" required class="form-control" id="LastName" name="LastName" placeholder="apellido del contacto" value="@Model.LastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <label for="Email">Correo</label>
+                    <input type="email" required class="form-control" id="Email" name="Email" placeholder="correo electronico contacto" value="@Model.LastName">
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
